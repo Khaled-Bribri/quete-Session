@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +35,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                <li><a href="/./login.php">Login</a></li>
+                    <li><a href="/./logout.php">Logout</a></li>
                     <li><a href="#">Chocolates chips</a></li>
                     <li><a href="#">Nuts</a></li>
                     <li><a href="#">Gluten full</a></li>
@@ -48,6 +51,11 @@
         </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid text-right">
-        <strong>Hello Wilder !</strong>
+        <strong> 
+            <?php if(empty($_SESSION['loginname'])){
+            echo "";}
+            else 
+            {echo "Hello" .$_SESSION['loginname']."!";}?>
+        </strong>
     </div>
 </header>
